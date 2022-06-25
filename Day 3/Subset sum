@@ -1,1 +1,23 @@
   
+void print(vector<int>&num, vector<int>&arraySum, int sum, int index)
+{
+    if(index<0)
+    {
+        arraySum.push_back(sum);
+        return;
+    }
+    
+    print(num,arraySum,sum,index-1);
+    print(num,arraySum,sum+num[index],index-1);
+}
+
+
+vector<int> subsetSum(vector<int> &num)
+{
+    // Write your code here.
+    vector<int> arraySum;
+    print(num,arraySum,0,num.size()-1);
+    sort(arraySum.begin(),arraySum.end());
+    return arraySum;
+}
+
