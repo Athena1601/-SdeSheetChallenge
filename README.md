@@ -25,3 +25,17 @@ Day 5 - 1/7/22
                       repeat and missing number
                       Inversion of array
                       Search in 2D matrix
+                      
+Day 6 -23/7/22 
+*11* problems solved - Pow(X,n)
+                       Majority element
+                       Majority Element
+                       Grid unique paths
+                       Reverse pairs
+                       2 sum problem
+                       4 sum problem
+                       Longest consecutive sequence
+                       Largest subarray with sum0
+                       Count number of subarrays
+                       longest substring without repeat
+                       
