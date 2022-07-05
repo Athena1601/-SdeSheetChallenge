@@ -31,6 +31,10 @@ Day 6 -23/7/22
                        Majority element
                        Majority Element
                        Grid unique paths
+                       
+                       
+
+Day 7 - 5/7/22
                        Reverse pairs
                        2 sum problem
                        4 sum problem
