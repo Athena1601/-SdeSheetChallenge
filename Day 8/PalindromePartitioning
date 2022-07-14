@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+
+bool ispalindrome(string str,int start, int end)
+{
+    while(start<end)
+    {
+        if(str[start]!=str[end])
+            return false;
+        
+        start++;
+        end--;
+    }
+    return true;
+}
+
+void findpaths(int index, string &s, vector<vector<string>>&ans, vector<string>&path)
+{
+    if(index==s.size())
+    {
+        ans.push_back(path);
+        return;
+    }
+    
+    for(int i=index;i<s.size();i++)
+    {
+        if(ispalindrome(s,index,i)==true)
+        {
+            path.push_back(s.substr(index,i-index+1));
+            findpaths(i+1,s,ans,path);
+            path.pop_back();
+        }
+    }
+}
+vector<vector<string>> partition(string &s) 
+{
+    // Write your code here.
+    vector<vector<string>>ans;
+    vector<string>path;
+    findpaths(0,s,ans,path);
+    
+    return ans;
+}
