@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+void find(int idx,int tar,vector<int> &arr,vector<int> &ds,vector<vector<int>>&ans){
+
+    if(tar==0){
+        ans.push_back(ds);
+        return;
+    }
+
+    if(idx==arr.size()){
+        if(tar=0){
+            ans.push_back(ds);
+        }
+        return;
+    }
+    // pick
+  
+        ds.push_back(arr[idx]);
+        find(idx+1,tar-arr[idx],arr,ds,ans);
+        ds.pop_back();
+  
+    // not pick
+    while(idx+1<arr.size() && arr[idx]==arr[idx+1]) idx++;
+    find(idx+1,tar,arr,ds,ans);
+}
+vector<vector<int>> combinationSum2(vector<int> &arr, int n, int target)
+{
+    // Write your code here.
+    vector<vector<int>>ans;
+    vector<int>ds;
+    sort(arr.begin(),arr.end());
+    find(0,target,arr,ds,ans);
+    sort(ans.begin(),ans.end());
+    return ans;
+}
