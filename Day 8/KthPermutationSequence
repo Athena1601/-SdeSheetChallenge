@@ -1,0 +1,34 @@
+#include<algorithm>
+#include<vector>
+
+void solve(int index, vector<string>&ans, string &s)
+{
+    if(index>=s.size())
+    {
+        ans.push_back(s);
+        return;
+    }
+    
+    for(int i=index;i<s.size();i++)
+    {
+        swap(s[index], s[i]);
+        solve(index+1,ans,s);
+        swap(s[index],s[i]);
+    }
+}
+
+string kthPermutation(int n, int k) {
+    // Write your code here.
+    vector<string>ans;
+    string s;
+    for(int i=1;i<=n;i++)
+    {
+        s.push_back(i+'0');
+    }
+    solve(0,ans,s);
+    
+    sort(ans.begin(),ans.end());
+    
+    auto out = ans.begin()+(k-1);
+    return *out;
+}
